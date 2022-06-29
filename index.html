@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title></title>
+
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a6874c76aa.js" crossorigin="anonymous"></script>
+
+    <style>
+        html {
+            font-family: 'Oxygen', sans-serif;
+            font-weight: bold;
+        }
+        body {
+            margin: 0px;
+        }
+        .container {
+            background: #093f04;
+        }
+        .container div {
+            display: none;
+        }
+        .container .toggle,
+        .container .link-wrapper {
+            display: inline-block;
+        }
+        .container .link {
+            display: block;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background: #9fe2a4;
+            color: black;
+        }
+        .container .link:hover,
+        .container .link:active {
+            color: white;
+            background: black;
+        }
+        .container .link-wrapper {
+            width: 14em;
+            text-align: center;
+            padding: 1em;
+            color: white;
+        }
+        .container a {
+            text-decoration: none;
+        }
+        .container .toggle {
+            padding: 1em;
+            color: black;
+        }
+        @media (min-width: 48em) {
+            .container {
+                display: flex;
+            }
+            .container .left-wrapper,
+            .container .right-wrapper {
+                display: flex;
+                flex: 1;
+            }
+            .container .link {
+                width: auto;
+            }
+            .container .right-wrapper {
+                justify-content: flex-end;
+            }
+            .container .toggle {
+                display: none;
+            }
+        }
+        @media (min-width: 48em) {
+            .container div {
+                display: flex;
+            }
+        }
+        @media (max-width: 48em) {
+            .container.active .toggle {
+                background: #223047;
+                color: white;
+            }
+            .container .link-wrapper {
+                text-align: left;
+            }
+            .container.active div {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="#" class="toggle" id="navHamburger">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a href="#" class="link-wrapper"><img src="logo1.png"></a>
+        <div class="left-wrapper">
+            <a href="#" class="link">Search</a>
+
+        </div>
+        <div class="right-wrapper">
+            <a href="#" class="link">Sign Up</a>
+            <a href="#" class="link">Login</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    const navHamburger = document.querySelector('#navHamburger');
+    navHamburger.addEventListener('click', (e) => {
+        navHamburger.parentElement.classList.toggle('active');
+    })
+</script>
+
+</html>
